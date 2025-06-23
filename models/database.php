@@ -467,10 +467,10 @@ function modifierUneReservation($id, $date_arrivee, $date_depart, $nombre_nuits,
 }
 
 
-function ajoutBlog($titre, $auteur, $description, $date, $image){
+function ajouterUnBlog($titre, $auteur, $description, $date, $image){
     global $db;
     try {
-        $q = $db->prepare("INSERT INTO blog VALUES(null, :titre, :auteur, :description, :date, :image)");
+        $q = $db->prepare("INSERT INTO blogs VALUES(null, :titre, :auteur, :description, :date, :image)");
         return $q->execute([
             "titre" => $titre,
             "auteur" => $auteur,
