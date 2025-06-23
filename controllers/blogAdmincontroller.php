@@ -21,6 +21,8 @@ if (isset($_POST["ajouter"])){
         } else {
             setmessage("Erreur d'ajout de blog", "danger");
         }
+    }else{
+        setmessage("Veuillez choisir une image", "danger");
     }
 }
 

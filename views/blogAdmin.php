@@ -1,6 +1,7 @@
 
 
 <!-- Blog Admin Panel -->
+ <?php require_once("views/includes/entete.php"); ?>
 <div class="container" style="margin-top: 150px;">
     <div class="card container col-md-8">
         <div class="card-header row bg-primary text-white">
@@ -30,18 +31,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                            <a href="#" class="btn btn-sm btn-primary"><i class="fa fa-edit me-1"></i>Modifier</a>
-                            <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash me-1"></i>Supprimer</a>
-                        </td>
-                    </tr>
                     <tr>
                         <td></td>
                         <td></td>
