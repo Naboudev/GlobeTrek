@@ -81,7 +81,7 @@
                         <?php endif; ?>
                         <?php if(isset($_SESSION["user"])): ?>
                         <div class="dropdown">
-                            <a href="packages.html" class="nav-item nav-link dropdown-toggle " data-bs-toggle="dropdown"><?= $_SESSION["user"]->prenom ?></a>
+                            <a href="packages.html" class="nav-item nav-link dropdown-toggle " data-bs-toggle="dropdown"><i class="fa fa-user"></i> <?= $_SESSION["user"]->prenom ?></a>
                             <div class="dropdown-menu rounded">
                                 <a href="?page=profil" class="dropdown-item"><i class="fas fa-user-alt me-2"></i>Profil</a>
                                 <a href="?page=deconnexion" class="dropdown-item"><i class="fas fa-power-off me-2"></i>Deconnexion</a>

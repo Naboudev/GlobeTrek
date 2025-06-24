@@ -61,8 +61,8 @@ if (isset($_POST["modifier"])){
 }
 
 
-if (isset($_GET["idDeleting"])){
-    if (supprimerUnBlog($_GET["idDeleting"])){
+if (isset($_GET["idblogs"])){
+    if (supprimerUnBlog($_GET["idblogs"])){
         setmessage("Suppression avec succes");
         return header("Location:?page=blogAdmin");
         exit();

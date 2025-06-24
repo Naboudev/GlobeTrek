@@ -528,12 +528,12 @@ function modifierUnBlog($id, $titre, $auteur, $description, $date, $image){
 }
 
 
-function supprimerUnBlog($id){
+function supprimerUnBlog($idblogs){
     global $db;
     try {
-        $q = $db->prepare("DELETE FROM chambres WHERE id=:id");
+        $q = $db->prepare("DELETE FROM chambres WHERE id =:idblogs");
         return $q->execute([
-            "id" => $id
+            "idblogs" => $idblogs
         ]);
     }catch (PDOException $e) {
         setmessage ("Erreur: ".$e->getMessage()." a la ligne ".__LINE__, "danger");

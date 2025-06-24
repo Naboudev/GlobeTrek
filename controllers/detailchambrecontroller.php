@@ -9,6 +9,6 @@ if (isset($_GET["id"])) {
 } else {
     header("Location:?page=home");
     exit();
-    
 }
+$chambres = recupererToutesLesChambres();
 require_once("views/detailchambre.php");

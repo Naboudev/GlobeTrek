@@ -43,7 +43,7 @@
                         <td><?= date("d-m-Y", strtotime($b->date)) ?></td>
                         <td>
                             <a href="?page=blogAdmin&type=edit&id=<?= $b->id ?>" class="btn btn-primary">Modifier</a>
-                            <a data-bs-toggle="modal" data-bs-target="#exampleModal<?= $b->id ?>" href="#" class="btn btn-danger btn-sm">Supprimer</a>
+                            <a data-bs-toggle="modal" data-bs-target="#exampleModal<?= $b->id ?>" href="" class="btn btn-danger btn-sm">Supprimer</a>
 
                             <!-- Modal de confirmation -->
                             <div class="modal fade" id="exampleModal<?= $b->id ?>" tabindex="-1" aria-labelledby="modalLabel<?= $b->id ?>" aria-hidden="true">
@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
-                                            <a href="?page=blogAdmin&idDeleting=<?= $b->id ?>" class="btn btn-danger">Oui</a>
+                                            <a href="?page=blogAdmin&idblogs=<?= $b->id ?>" class="btn btn-danger">Oui</a>
                                         </div>
                                     </div>
                                 </div>

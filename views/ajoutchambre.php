@@ -42,13 +42,13 @@
                     <input type="radio" class="form-check-input" id="disponible" name="disponible">
                     <label class="form-check-label" for="disponible">Disponible à la réservation</label>
                 </div>
-                    <?php if ($_GET["type"] == "add"): ?>
+                    <?php if ($_GET["type"] == "edit"): ?>
                     <div class="mb-3 form-group">
-                         <button type="submit" name="ajouter" class="btn btn-primary">Ajouter une chambre</button>
+                         <button type="submit" name="modifier" class="btn btn-warning">Modifier une chambre</button>
                     </div> 
                     <?php else: ?> 
                      <div class="mb-3 form-group">
-                        <button type="submit" name="modifier" class="btn btn-primary">Modifier</button>
+                        <button type="submit" name="ajouter" class="btn btn-primary">Ajouter une chambre</button>
                     </div>
                     <?php endif; ?>
             </form> 

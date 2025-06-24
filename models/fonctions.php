@@ -49,6 +49,19 @@ function recupererLesDonneesDeLInput($nom) {
 }
 
 function dateDepart($id) {
-    $c = dateChambreReservee($id);
-    return $c ? $c->date_depart : null;
+    // Connexion à la base de données (à adapter selon ton projet)
+    $pdo = new PDO("mysql:host=localhost;dbname=globe trek", "root", "");
+
+    // Préparation de la requête : on récupère la réservation en cours (date de départ la plus proche et future)
+    $stmt = $pdo->prepare("SELECT date_depart 
+                           FROM reservations 
+                           WHERE chambre_id = :id 
+                             AND date_depart >= CURDATE() 
+                           ORDER BY date_depart ASC 
+                           LIMIT 1");
+
+    $stmt->execute(["id" => $id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    return $result ? $result["date_depart"] : null;
 }
