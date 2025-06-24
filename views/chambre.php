@@ -11,28 +11,28 @@
     </div>
   <!-- Header End -->
 <!-- Chambre Start -->
-  <div class="container-fluid packages py-5">
+<div class="container-fluid packages py-5">
   <div class="container py-5">
     <div class="mx-auto text-center mb-5" style="max-width: 900px;">
       <h5 class="section-title px-3">Chambres</h5>
       <h1 class="mb-0">Chambres Disponibles</h1>
     </div>
-    <div class="row g-4">
-      <?php foreach ($chambres as $c): ?>
-        <div class="col-md-4">
-          <div class="card h-100 shadow-sm">
-            <img src="images/<?= htmlspecialchars($c->image) ?>" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Image de <?= htmlspecialchars($c->nom) ?>">
-            <div class="card-body d-flex flex-column">
-              <h5 class="card-title"><?= htmlspecialchars($c->nom) ?></h5>
-              <p class="card-text">
-                <?= strlen($c->description) > 100 ? htmlspecialchars(substr($c->description, 0, 100)) . '...' : htmlspecialchars($c->description) ?>
-              </p>
-              <p class="text-primary fw-bold"><?= number_format($c->prix, 0, ',', ' ') ?> FCFA</p>
-              <a href="?page=detailchambre&id=<?= $c->id ?>" class="btn btn-primary mt-auto">Voir plus →</a>
-            </div>
-          </div>
-        </div>
-      <?php endforeach; ?>
+    <div class="card h-100 shadow-sm">
+      <img src="images/<?= htmlspecialchars($c->image) ?>" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Image de <?= htmlspecialchars($c->nom) ?>">
+      
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title"><?= htmlspecialchars($c->nom) ?></h5>
+        <p class="text-primary fw-bold"><?= number_format($c->prix, 0, ',', ' ') ?> FCFA <small>/jour</small></p>
+
+        <!-- Bouton Réserver ou Occupée -->
+        <?php if ($c->disponible == 0): ?>
+          <a href="?page=reservation&id=<?= $c->id ?>" class="btn btn-success mb-2">Réserver cette chambre</a>
+        <?php else: ?>
+          <a href="" class="btn theme_btn btn-danger mb-2">Occupée <br> jusqu'à <br> <?= date("d/m/Y", strtotime(dateDepart($c->id))) ?></a>
+        <?php endif; ?>
+
+        <a href="?page=detailchambre&id=<?= $c->id ?>" class="btn btn-primary mt-auto">Voir plus →</a>
+      </div>
     </div>
   </div>
 </div>

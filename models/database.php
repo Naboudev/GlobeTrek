@@ -482,3 +482,79 @@ function ajouterUnBlog($titre, $auteur, $description, $date, $image){
         setmessage("Erreur: " . $e->getMessage() . " à la ligne " . __LINE__, "danger");
     }
 }
+
+
+function listeDesBlogs(){
+    global $db;
+    try {
+        $q = $db->prepare("SELECT * FROM blogs");
+        $q->execute();
+        return $q->fetchAll(PDO::FETCH_OBJ);
+    } catch (PDOException $e) {
+        setmessage("Erreur: " . $e->getMessage() . " à la ligne " . __LINE__, "danger");
+    }
+}
+
+
+function recupererUnBlog($id){
+    global $db;
+    try {
+        $q = $db->prepare("SELECT * FROM blogs WHERE id =:id");
+        $q->execute([
+            "id" => $id
+        ]);
+        return $q->fetch(PDO::FETCH_OBJ);
+    } catch (PDOException $e) {
+        setmessage("Erreur: " . $e->getMessage() . " à la ligne " . __LINE__, "danger");
+    }
+}
+
+
+function modifierUnBlog($id, $titre, $auteur, $description, $date, $image){
+    global $db;
+    try {
+        $q = $db->prepare("UPDATE blogs SET titre =:titre, auteur =:auteur, description =:description, date =:date, image =:image WHERE id =:id");
+        return $q->execute([
+            "titre" => $titre,
+            "auteur" => $auteur,
+            "description" => $description,
+            "date" => $date,
+            "image" => $image,
+            "id" => $id
+         ]);
+    } catch (PDOException $e) {
+        setmessage("Erreur: " . $e->getMessage() . " à la ligne " . __LINE__, "danger");
+    }
+}
+
+
+function supprimerUnBlog($id){
+    global $db;
+    try {
+        $q = $db->prepare("DELETE FROM chambres WHERE id=:id");
+        return $q->execute([
+            "id" => $id
+        ]);
+    }catch (PDOException $e) {
+        setmessage ("Erreur: ".$e->getMessage()." a la ligne ".__LINE__, "danger");
+    }
+}
+
+
+function dateChambreReservee($id){
+    global $db;
+    try {
+        $q = $db->prepare("SELECT date_depart
+        FROM chambres c, reservation r
+        WHERE c.id = r.chambre_id AND c.id = :id
+        ORDER BY c.id DESC");
+    $q->execute([
+        "id" => $id
+    ]);
+
+    return $q->fetch(PDO::FETCH_OBJ);
+
+    }catch (PDOException $e) {
+        setmessage ("Erreur: ".$e->getMessage()." a la ligne ".__LINE__, "danger");
+    }
+}

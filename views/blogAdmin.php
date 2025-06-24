@@ -13,12 +13,14 @@
                     <a href="?page=blogAdmin&type=add" class="btn btn-success">Ajouter</a>
                 <?php endif; ?>
             </div>
-        </div>
+        </div> 
         <div class="card-body"> 
             <?php if (isset($_GET["type"])): ?>
             <?php require_once("views/ajoutblog.php"); ?>
             <?php else: ?>
-            <table class="table table-bordered table-striped">
+            <table id="myTable" class="table table-bordered table-striped"> 
+            <?php require_once("views/includes/getmessage.php"); ?>
+
                 <thead>
                     <tr>
                         <th>#</th>
@@ -31,18 +33,39 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach ($blogs as $b): ?>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><?= $b->id ?></td>
+                        <td><img src="images/<?= $b->image ?>" alt="<?= $b->titre ?>" class="img-thumbnail" style="width: 100px;"></td>
+                        <td><?= $b->titre ?></td>
+                        <td><?= $b->auteur ?></td>
+                        <td><?= substr($b->description, 0, 50) . '...' ?></td>
+                        <td><?= date("d-m-Y", strtotime($b->date)) ?></td>
                         <td>
-                            <a href="#" class="btn btn-sm btn-primary"><i class="fa fa-edit me-1"></i>Modifier</a>
-                            <a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash me-1"></i>Supprimer</a>
-                        </td>
+                            <a href="?page=blogAdmin&type=edit&id=<?= $b->id ?>" class="btn btn-primary">Modifier</a>
+                            <a data-bs-toggle="modal" data-bs-target="#exampleModal<?= $b->id ?>" href="#" class="btn btn-danger btn-sm">Supprimer</a>
+
+                            <!-- Modal de confirmation -->
+                            <div class="modal fade" id="exampleModal<?= $b->id ?>" tabindex="-1" aria-labelledby="modalLabel<?= $b->id ?>" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalLabel<?= $b->id ?>">Confirmation de suppression</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Êtes-vous sûr de vouloir supprimer le blog <strong><?= htmlspecialchars($b->titre) ?></strong> ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+                                            <a href="?page=blogAdmin&idDeleting=<?= $b->id ?>" class="btn btn-danger">Oui</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>                                                               
                     </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
             <?php endif; ?>

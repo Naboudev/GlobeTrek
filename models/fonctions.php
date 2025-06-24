@@ -47,3 +47,8 @@ function supprimerLesDonneesDeLInput() {
 function recupererLesDonneesDeLInput($nom) {
    return isset($_SESSION["input"][$nom]) ? $_SESSION["input"][$nom] : null;
 }
+
+function dateDepart($id) {
+    $c = dateChambreReservee($id);
+    return $c ? $c->date_depart : null;
+}

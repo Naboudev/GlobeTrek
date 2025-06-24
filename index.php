@@ -28,6 +28,8 @@ if (isset($_GET["page"])) {
         require_once("controllers/blogcontroller.php");
     }elseif ($_GET["page"] == "blogAdmin") {
         require_once("controllers/blogAdmincontroller.php");
+    }elseif ($_GET["page"] == "blogDetail") {
+        require_once("controllers/blogDetailcontroller.php");
     }elseif ($_GET["page"] == "chambre") {
         require_once("controllers/chambrecontroller.php");
     }elseif ($_GET["page"] == "chambreAdmin") {
