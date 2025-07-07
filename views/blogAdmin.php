@@ -18,7 +18,7 @@
             <?php if (isset($_GET["type"])): ?>
             <?php require_once("views/ajoutblog.php"); ?>
             <?php else: ?>
-            <table id="myTable" class="table table-bordered table-striped"> 
+            <table id="myTable" class="table table-bordered table-striped table-hover align-middle text-center"> 
             <?php require_once("views/includes/getmessage.php"); ?>
 
                 <thead>

@@ -40,6 +40,12 @@ if (isset($_GET["page"])) {
         require_once("controllers/reservationcontroller.php");
     }elseif ($_GET["page"] == "detailchambre") {
         require_once("controllers/detailchambrecontroller.php");
+    }elseif ($_GET["page"] == "reservationpaysAdmin") {
+        require_once("controllers/reservationpaysAdmincontroller.php");
+    }elseif ($_GET["page"] == "employeAdmin") {
+        require_once("controllers/employeAdmincontroller.php");
+    }elseif ($_GET["page"] == "ajoutreservationpays") {
+        require_once("controllers/ajoutreservationpayscontroller.php");
     }else{
         require_once("controllers/homecontroller.php");     
     }

@@ -11,7 +11,7 @@
           </ul>
         </div>
         <div class="card-body"> 
-    <?php require_once("views/includes/getmessage.php"); ?>
+        <?php require_once("views/includes/getmessage.php"); ?>
           <div class="tab-content" id="authTabsContent">
             <!-- Formulaire de Connexion -->
             <div class="tab-pane fade show active" id="login" role="tabpanel">

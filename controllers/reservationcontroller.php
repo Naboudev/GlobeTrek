@@ -3,7 +3,7 @@
 
 if (!isset($_SESSION["user"])) {
     setmessage("Vous devez vous connecter pour accéder à cette page", "danger");
-    header("Location: ?page=login");
+    header("Location: ?page=connexion");
     exit();
 }
 

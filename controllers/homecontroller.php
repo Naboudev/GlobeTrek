@@ -1,5 +1,9 @@
 <?php 
 
+if (isset($_GET["id"])) {
+    $destinations = recupererUneDestination($_GET["id"]);
+}
+
 $pays = recupererTousLesPays();
 $destinations = recupererToutesLesDestinations();
 

@@ -1,92 +1,117 @@
 
-<!-- Navbar & Hero Start -->
-    <!-- Carousel Start -->
-    <div class="carousel-header" style="margin-top: 90px;">
-        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
-                <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
-                <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
-                    <img src="images/images/carousel-2.jpg" class="img-fluid" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase fw-bold" style="letter-spacing: 3px;">Explore The World</h4>
-                            <h1 class="display-2 text-capitalize text-white">Let's The World Together!</h1>
-                            <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/images/carousel-1.jpg" class="img-fluid" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase fw-bold" style="letter-spacing: 3px;">Explore The World</h4>
-                            <h2 class="display-2 text-capitalize text-white">Find Your Perfect Tour At Travel</h2>
-                            <p class="mb-4 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="images/682cab084e192.jpg" class="img-fluid" alt="Image">
-                    <div class="carousel-caption">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h4 class="text-white text-uppercase fw-bold" style="letter-spacing: 5px; margin-top: 100px;">Explore The World</h4>
-                            <h1 class="display-2 text-capitalize text-white" style="margin-bottom: 30px;">You Like To Go?</h1>
-                            <p class="mb-5 fs-5" style="margin-bottom: 920px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                            </p>   
-                        </div>
+<!-- Carousel Start -->
+<div class="carousel-header" style="margin-top: 90px;">
+    <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner" role="listbox">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+                <img src="images/images/carousel-2.jpg" class="img-fluid zoom-bg" alt="Image">
+                <div class="carousel-caption animate text-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase fw-bold fadeInUp">Explore The World</h4>
+                        <h1 class="display-2 text-capitalize text-white fadeInUp">Let's The World Together!</h1>
+                        <p class="mb-4 fs-5 fadeInUp">Lorem Ipsum is simply dummy text of the printing industry.</p>
+                        <a href="reservation.php" class="btn btn-primary btn-lg px-4 py-2 mt-3 fadeInUp" style="animation-delay: 1.1s;">Réserver maintenant</a>
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
-                <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="images/images/carousel-1.jpg" class="img-fluid zoom-bg" alt="Image">
+                <div class="carousel-caption animate text-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase fw-bold fadeInUp">Explore The World</h4>
+                        <h2 class="display-2 text-capitalize text-white fadeInUp">Find Your Perfect Tour</h2>
+                        <p class="mb-4 fs-5 fadeInUp">Lorem Ipsum is simply dummy text of the printing industry.</p>
+                        <a href="reservation.php" class="btn btn-primary btn-lg px-4 py-2 mt-3 fadeInUp" style="animation-delay: 1.1s;">Réserver maintenant</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <img src="images/682cab084e192.jpg" class="img-fluid zoom-bg" alt="Image">
+                <div class="carousel-caption animate text-center">
+                    <div class="p-3" style="max-width: 900px;">
+                        <h4 class="text-white text-uppercase fw-bold fadeInUp">Explore The World</h4>
+                        <h1 class="display-2 text-capitalize text-white fadeInUp">You Like To Go?</h1>
+                        <p class="mb-4 fs-5 fadeInUp">Lorem Ipsum is simply dummy text of the printing industry.</p>
+                        <a href="reservation.php" class="btn btn-primary btn-lg px-4 py-2 mt-3 fadeInUp" style="animation-delay: 1.1s;">Réserver maintenant</a>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+            <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <!-- Carousel End -->
-    
-<!-- Navbar & Hero End -->
+</div>
+<!-- Carousel End -->
+
+<!-- Animations CSS -->
+<style>
+/* Image zoom on load */
+.zoom-bg {
+    transform: scale(1.1);
+    transition: transform 8s ease;
+}
+.carousel-item.active .zoom-bg {
+    transform: scale(1);
+}
+
+/* Fade-in up animation */
+.fadeInUp {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.carousel-caption.animate h1,
+.carousel-caption.animate h2,
+.carousel-caption.animate h4,
+.carousel-caption.animate p,
+.carousel-caption.animate a {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+
         
 <!-- About Start -->
 <div class="container-fluid about py-5">
     <div class="container py-5">
         <div class="row g-5 align-items-center">
-            
-            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(images/images/about-img-1.jpg);">
-                <h5 class="section-about-title pe-3">Qui Sommes-Nous</h5>
-                <h1 class="mb-4">Bienvenue chez <span class="text-primary">GlobeTrek</span></h1>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum, doloribus sunt dicta, officia voluptatibus libero necessitatibus natus impedit quam ullam assumenda? Id atque iste consectetur. Commodi odit ab saepe!</p>
-                <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quos voluptatem suscipit neque enim, doloribus ipsum rem eos distinctio, dignissimos nisi saepe nulla? Libero numquam perferendis provident placeat molestiae quia?</p>
-                <div class="row gy-2 gx-4 mb-4">
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
-                    </div>
-                    <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
-                    </div>
-                </div>
+            <div class="col-lg-7 wow fadeInLeft animated-box" data-wow-delay="0.1s" 
+                 style="background: linear-gradient(rgba(255, 255, 255, .85), rgba(255, 255, 255, .85)), 
+                        url(images/images/about-img-1.jpg) center/cover no-repeat; 
+                        border-radius: 15px; padding: 40px; box-shadow: 0 0 30px rgba(0,0,0,0.1);">
+                <h5 class="section-about-title pe-3 text-primary fadeInUp">Qui Sommes-Nous</h5>
+                <h1 class="mb-4 fadeInUp">Bienvenue chez <span class="text-primary">GlobeTrek</span></h1>
+                <p class="mb-4 fadeInUp">Bienvenue sur <strong>Globe Trek</strong>, votre compagnon de confiance pour explorer le monde et réserver votre hébergement en toute simplicité. <br><br>
+                    Chez Globe Trek, nous croyons que chaque voyage est une aventure unique, qu’il s’agisse d’une escapade le temps d’un week-end ou d’un grand tour du monde. <br><br>
+                    Notre objectif : <strong>faciliter vos projets de voyage</strong> en vous offrant un large choix d’hébergements, des conseils pratiques et des outils de planification. <br><br>
+                    Globe Trek, c’est aussi une équipe passionnée, toujours à l’écoute, pour vous accompagner avant, pendant et après votre séjour. 🧳
+                    <br><br><strong>Trouvez, réservez, partez</strong> – Globe Trek, votre voyage commence ici.</p>  
             </div>
         </div>
     </div>
@@ -97,123 +122,109 @@
 <div class="container-fluid bg-light service py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Services</h5>
-            <h1 class="mb-0">Notre Service</h1>
+            <h5 class="section-title px-3 text-primary fadeInDown">Services</h5>
+            <h1 class="mb-0 fadeInUp">Nos Services</h1>
         </div>
         <div class="row g-4">
-            <div class="col-lg-6">
-                <div class="row g-4">
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                            <div class="service-content text-end">
-                                <h5 class="mb-4">WorldWide Tours</h5>
-                                <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                            <div class="service-icon p-4">
-                                <i class="fa fa-globe fa-4x text-primary"></i>
-                            </div>
-                        </div>
+            <!-- Service 1 -->
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-box d-flex flex-column align-items-center bg-white border border-primary rounded p-4 text-center h-100 shadow-sm transition">
+                    <div class="service-icon mb-3 zoom-in">
+                        <i class="fa fa-globe fa-3x text-primary"></i>
                     </div>
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center  bg-white border border-primary rounded p-4 pe-0">
-                            <div class="service-content text-end">
-                                <h5 class="mb-4">Hotel Reservation</h5>
-                                <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                            <div class="service-icon p-4">
-                                <i class="fa fa-hotel fa-4x text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                            <div class="service-content text-end">
-                                <h5 class="mb-4">Travel Guides</h5>
-                                <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                            <div class="service-icon p-4">
-                                <i class="fa fa-user fa-4x text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                            <div class="service-content text-end">
-                                <h5 class="mb-4">Event Management</h5>
-                                <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                            <div class="service-icon p-4">
-                                <i class="fa fa-cog fa-4x text-primary"></i>
-                            </div>
-                        </div>
-                    </div>
+                    <h5 class="mb-3">Circuits Internationaux</h5>
+                    <p>Explorez les quatre coins du globe avec nos circuits organisés, pour des aventures inoubliables.</p>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="row g-4">
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                            <div class="service-icon p-4">
-                                <i class="fa fa-globe fa-4x text-primary"></i>
-                            </div>
-                            <div class="service-content">
-                                <h5 class="mb-4">WorldWide Tours</h5>
-                                <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                        </div>
+            <!-- Service 2 -->
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="service-box d-flex flex-column align-items-center bg-white border border-primary rounded p-4 text-center h-100 shadow-sm transition">
+                    <div class="service-icon mb-3 zoom-in">
+                        <i class="fa fa-hotel fa-3x text-primary"></i>
                     </div>
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                            <div class="service-icon p-4">
-                                <i class="fa fa-hotel fa-4x text-primary"></i>
-                            </div>
-                            <div class="service-content">
-                                <h5 class="mb-4">Hotel Reservation</h5>
-                                <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                            <div class="service-icon p-4">
-                                <i class="fa fa-user fa-4x text-primary"></i>
-                            </div>
-                            <div class="service-content">
-                                <h5 class="mb-4">GlobeTrek Guides</h5>
-                                <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                            <div class="service-icon p-4">
-                                <i class="fa fa-cog fa-4x text-primary"></i>
-                            </div>
-                            <div class="service-content">
-                                <h5 class="mb-4">Event Management</h5>
-                                <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <h5 class="mb-3">Réservation d’Hôtels</h5>
+                    <p>Réservez des hébergements de qualité dans le monde entier, en toute sécurité et au meilleur prix.</p>
                 </div>
             </div>
-            <div class="col-12">
-                <div class="text-center">
-                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-2" href="">Service More</a>
+            <!-- Service 3 -->
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-box d-flex flex-column align-items-center bg-white border border-primary rounded p-4 text-center h-100 shadow-sm transition">
+                    <div class="service-icon mb-3 zoom-in">
+                        <i class="fa fa-user fa-3x text-primary"></i>
+                    </div>
+                    <h5 class="mb-3">Guides GlobeTrek</h5>
+                    <p>Profitez de conseils d’experts grâce à nos guides détaillés pour préparer vos voyages.</p>
                 </div>
             </div>
+            <!-- Service 4 -->
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                <div class="service-box d-flex flex-column align-items-center bg-white border border-primary rounded p-4 text-center h-100 shadow-sm transition">
+                    <div class="service-icon mb-3 zoom-in">
+                        <i class="fa fa-cog fa-3x text-primary"></i>
+                    </div>
+                    <h5 class="mb-3">Organisation d’Événements</h5>
+                    <p>Mariages, séminaires ou voyages de groupe, nous gérons vos événements avec professionnalisme.</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a class="btn btn-primary rounded-pill py-3 px-5 fadeInUp" href="#">En savoir plus</a>
         </div>
     </div>
 </div>
 <!-- Services End -->
+
+<!-- Animation CSS -->
+<style>
+.fadeInUp {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+.fadeInDown {
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInDown 1s forwards;
+}
+.zoom-in {
+    animation: zoomIn 1s ease forwards;
+}
+.animated-box {
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+.transition {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.transition:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes fadeInDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+</style>
+
 
 <!-- Destinations Populaires -->
 <div class="container-fluid gallary py-5 my-5">
@@ -262,6 +273,7 @@
             <?php $first = false; endforeach; ?>
         </div>
     </div>
+                            
 </div>
 <!-- Destinations Populaires End -->
 
@@ -595,68 +607,19 @@
             <div class="col-lg-6">
                 <h1 class="text-white mb-3">Réservez un  visite Offers</h1>
                 <p class="text-white mb-4">Obtenez <span class="text-warning">50% de réduction</span>  sur votre premier voyage d’aventure avec GlobeTrek. Obtenez plus d’offres ici.</p>
-                <form>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control bg-white border-0" id="name" placeholder="Votre Nom">
-                                <label for="name">Votre Nom</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="email" class="form-control bg-white border-0" id="email" placeholder="Votre Email">
-                                <label for="email">Votre Email</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating date" id="date3" data-target-input="nearest">
-                                <input type="text" class="form-control bg-white border-0" id="datetime" placeholder="Date et Heure" data-target="#date3" data-toggle="datetimepicker" />
-                                <label for="datetime">Date et Heure</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <select class="form-select bg-white border-0" id="select1">
-                                    <option value="1">Destination 1</option>
-                                    <option value="2">Destination 2</option>
-                                    <option value="3">Destination 3</option>
-                                </select>
-                                <label for="select1">Destination</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <select class="form-select bg-white border-0" id="SelectPerson">
-                                    <option value="1">Personnes 1</option>
-                                    <option value="2">Personnes 2</option>
-                                    <option value="3">Personnes 3</option>
-                                </select>
-                                <label for="SelectPerson">Personnes</label>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <select class="form-select bg-white border-0" id="CategoriesSelect">
-                                    <option value="1">Enfants</option>
-                                    <option value="2">1</option>
-                                    <option value="3">2</option>
-                                    <option value="3">3</option>
-                                </select>
-                                <label for="CategoriesSelect">Categories</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control bg-white border-0" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                <label for="message">Demande Speciale</label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button class="btn btn-primary text-white w-100 py-3" type="submit">Réservez maintenant</button>
+                <?php if (isset($_SESSION["user"])): ?>
+                    <div class="text-center my-5">
+                        <a href="?page=ajoutreservationpays" class="btn btn-primary btn-lg px-5">Réserver maintenant</a>
+                    </div>
+                <?php else: ?>
+                    <div class="text-center my-5">
+                        <div class="alert alert-warning">
+                            <p>Veuillez vous connecter pour réserver.</p>
+                            <a href="?page=connexion" class="btn btn-outline-primary">Se connecter</a>
                         </div>
                     </div>
-                </form>
+                <?php endif; ?>
+
             </div>
         </div>
     </div>

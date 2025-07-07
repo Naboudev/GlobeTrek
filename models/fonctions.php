@@ -65,3 +65,40 @@ function dateDepart($id) {
 
     return $result ? $result["date_depart"] : null;
 }
+
+// function reserver()
+// {
+//     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//         // Connexion à la base de données
+//         $pdo = new PDO("mysql:host=localhost;dbname=globe trek;charset=utf8", "root", "");
+
+//         // Sécurisation des données
+//         $nom = htmlspecialchars($_POST['nom']);
+//         $email = htmlspecialchars($_POST['email']);
+//         $date_heure = $_POST['date_heure'];
+//         $destination = htmlspecialchars($_POST['destination']);
+//         $pays_depart = htmlspecialchars($_POST['pays_depart']);
+//         $personnes = intval($_POST['personnes']);
+//         $enfants = intval($_POST['enfants']);
+//         $demande = htmlspecialchars($_POST['demande']);
+//         $prix = floatval($_POST['prix']);
+//         $paymentMethod = htmlspecialchars($_POST['paymentMethod']);
+
+//         // Préparation de la requête SQL
+//         $sql = "INSERT INTO reservations 
+//                 (nom, email, date_heure, destination, pays_depart, personnes, enfants, demande_speciale, prix, payment_method) 
+//                 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+//         $stmt = $pdo->prepare($sql);
+//         $success = $stmt->execute([
+//             $nom, $email, $date_heure, $destination, $pays_depart, $personnes, $enfants, $demande, $prix, $paymentMethod
+//         ]);
+
+//         if ($success) {
+//             echo "<div class='alert alert-success'>Réservation enregistrée avec succès.</div>";
+//         } else {
+//             echo "<div class='alert alert-danger'>Erreur lors de l'enregistrement.</div>";
+//         }
+//     }
+// }
+

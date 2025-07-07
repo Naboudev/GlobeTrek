@@ -8,15 +8,18 @@ if (isset($_POST["connecter"])) {
             $_SESSION["user"] = $user;
 
             if ($user->role == "admin") {
-                return header("Location:?page=reservationAdmin");
+                return header("Location:?page=employeAdmin");
             }else{
-                return header("Location:?page=home");
+                return header("Location:?page=profil");
             }
+            supprimerLesDonneesDeLInput();
         }else{
             setmessage ("Mot de passe incorrecte", "warning");
+            enregistrerLesDonneesDeLInput();
         }
     }else{
         setmessage ("Email incorrecte", "warning");
+        enregistrerLesDonneesDeLInput();
     }
 }
 require_once("views/includes/entete.php");

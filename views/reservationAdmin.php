@@ -1,12 +1,12 @@
 <div class="container" style="margin-top: 150px;">
     <div class="card container col-md-12">
         <div class="card-header row bg-primary text-white">
-            <h4 class="col-md-10 text-white">Listes des réservations</h4>
+            <h4 class="col-md-10 text-white">Listes des réservations Chambres</h4>
         </div>
     </div> 
     <?php require_once("views/includes/getmessage.php"); ?>
     <div class="table-responsive">
-        <table id="myTable" class="table table-bordered table-striped ">
+        <table id="myTable" class="table table-bordered table-striped table-hover align-middle text-center">
             <thead>
                 <tr>
                     <th>Chambre</th>
@@ -60,3 +60,6 @@
         </table>
     </div>
 </div>
+
+
+

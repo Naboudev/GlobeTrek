@@ -21,6 +21,27 @@ if (isset($_POST["ajouter"])) {
 }
 
 
+if (isset($_GET["iddestinations"])) {
+    if (supprimerUneDestination($_GET["iddestinations"])) {
+        setmessage("Suppression de destinations avec succes");   
+        return header("Location:?page=destination");
+    }else{
+        setmessage("Erreur de suppression de destinations", "danger"); 
+    }
+}
+
+
+if (isset($_POST["modifier"])) {
+    extract($_POST);
+    if (modifierUneDestination($_GET["id"], $img_name, $nom, $description, $prix, $pays_id,)) {
+        setmessage("Modification de destinations avec succes");   
+        return header("Location:?page=destination");
+     }else{
+        setmessage("Erreur de modification de destinations", "danger"); 
+    }
+}
+
+
 // variables
 $pays = recupererTousLesPays();
 $destinations = recupererToutesLesDestinations();
@@ -30,6 +51,9 @@ $destinations = recupererToutesLesDestinations();
 require_once("views/includes/entete.php");
 
 if (isset($_GET["type"])) {
+    if (isset($_GET["id"])) {
+        $d = recupererUneDestination($_GET["id"]);
+    }
     require_once("views/destination/ajout.php");
 }else {
 

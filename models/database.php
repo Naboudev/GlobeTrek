@@ -39,6 +39,52 @@ function AjouterUneDestination($nom, $description, $prix, $pays_id, $image){
 }
 
 
+function supprimerUneDestination($id){
+    global $db;
+    try {
+        $q = $db->prepare("DELETE FROM destinations WHERE id=:id");
+        return $q->execute([
+            "id" => $id
+        ]);
+    }catch (PDOException $e) {
+        setmessage ("Erreur: ".$e->getMessage()." a la ligne ".__LINE__, "danger");
+    }
+}
+
+
+function recupererUneDestination($id){
+    global $db;
+    try {
+        $q = $db->prepare("SELECT * FROM destinations WHERE id=:id");
+        $q->execute([
+            "id" => $id
+        ]);
+
+        return $q->fetch(PDO::FETCH_OBJ);
+    }catch (PDOException $e) {
+        setmessage ("Erreur: ".$e->getMessage()." a la ligne ".__LINE__, "danger");
+    }
+}
+
+
+function modifierUneDestination($id, $image, $nom, $description, $prix, $pays_id){
+    global $db;
+    try {
+        $q = $db->prepare("UPDATE destinations SET image=:image, nom=:nom, description=:description, prix=:prix, pays_id=:pays_id WHERE id=:id");
+        return $q->execute([
+            "image" => $image,
+            "nom" => $nom,
+            "description" => $description,
+            "prix" => $prix,
+            "pays_id" => $pays_id,
+            "id" => $id
+        ]);
+    }catch (PDOException $e) {
+        setmessage ("Erreur: ".$e->getMessage()." a la ligne ".__LINE__, "danger");
+    }
+}
+
+
 function recupererTousLesPays(){
     global $db;
     try {
@@ -146,6 +192,50 @@ function recupererTousLesClients(){
         $q = $db->prepare("SELECT * FROM users WHERE role =:role");
         $q->execute([
             "role" => "client"
+        ]);
+        return $q->fetchAll(PDO::FETCH_OBJ);
+    }catch (PDOException $e) {
+        setmessage ("Erreur: ".$e->getMessage()." a la ligne ".__LINE__, "danger");
+    }
+}
+
+
+function supprimerUnUtilisateur($id){
+    global $db;
+    try {
+        $q = $db->prepare("DELETE FROM users WHERE id=:id");
+        return $q->execute([
+            "id" => $id
+        ]);
+    }catch (PDOException $e) {
+        setmessage ("Erreur: ".$e->getMessage()." a la ligne ".__LINE__, "danger");
+    }
+}
+
+
+function recupererUnUtilisateur($id){
+    global $db;
+    try {
+        $q = $db->prepare("SELECT * FROM users WHERE id=:id");
+        $q->execute([
+            "id" => $id
+        ]);
+
+        return $q->fetch(PDO::FETCH_OBJ);
+    }catch (PDOException $e) {
+        setmessage ("Erreur: ".$e->getMessage()." a la ligne ".__LINE__, "danger");
+    }
+}
+
+
+function recupererTousLesEmployes(){
+    global $db;
+    try {   
+        $q = $db->prepare("SELECT * FROM users WHERE (role =:role1 OR role =:role2) AND id != :id");
+        $q->execute([
+            "role1" => "admin",
+            "role2" => "employe",
+            "id" => $_SESSION["user"]->id
         ]);
         return $q->fetchAll(PDO::FETCH_OBJ);
     }catch (PDOException $e) {

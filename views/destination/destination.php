@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="card-body">
-        <table class="table table-striped table-bordered">
+        <table class="table table-striped table-bordered table-hover align-middle text-center">
             <thead>
                 <tr>
                     <th>Image</th>
@@ -29,8 +29,27 @@
                         <td><?= $d->prix ?>FCFA</td>
                         <td><?= $d->pays_id ?></td>
                         <td>
-                            <a href="" class="btn btn-primary">Modifier</a>
-                            <a href="" class="btn btn-danger">Supprimer</a>
+                            <a href="?page=destination&type=edit&id=<?= $d->id ?>" class="btn btn-primary btn-sm">Modifier</a>
+                            <a data-bs-toggle="modal" data-bs-target="#exampleModal<?= $d->id ?>" href="#" class="btn btn-danger btn-sm">Supprimer</a>
+
+                            <!-- Modal de confirmation -->
+                            <div class="modal fade" id="exampleModal<?= $d->id ?>" tabindex="-1" aria-labelledby="modalLabel<?= $d->id ?>" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="modalLabel<?= $d->id ?>">Confirmation de suppression</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Êtes-vous sûr de vouloir supprimer cette <strong><?= htmlspecialchars($d->nom) ?></strong> ?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Non</button>
+                                            <a href="?page=destination&iddestinations=<?= $d->id ?>" class="btn btn-danger">Oui</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                 <?php endforeach; ?>

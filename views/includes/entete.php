@@ -58,8 +58,14 @@
                                 <a href="?page=pays" class="nav-item nav-link">Pays</a>
                                 <a href="?page=destination" class="nav-item nav-link">Destinations</a>
                                 <a href="?page=chambreAdmin" class="nav-item nav-link">Chambres</a>
-                                <a href="?page=reservationAdmin" class="nav-item nav-link">Réservations</a>
                                 <a href="?page=blogAdmin" class="nav-item nav-link">Blogs</a>
+                                <a href="?page=employeAdmin" class="nav-item nav-link">Employes</a>
+                                <div class="nav-item dropdown">
+                                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Réservations</a>
+                                    <div class="dropdown-menu m-0">
+                                    <a href="?page=reservationAdmin" class="dropdown-item">Réservations Chambres</a>
+                                    <a href="?page=reservationpaysAdmin" class="dropdown-item">Réservations Destinations</a>
+                                </div>
                             </div>
                         <?php else: ?>
                         <div class="navbar-nav ms-auto py-0">
@@ -71,7 +77,7 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
-                                <a href="?page=blog" class="dropdown-item">Blog</a>
+                                <a href="?page=blog" class="dropdown-item">Blogs</a>
                                 <a href="?page=paquets" class="dropdown-item">Paquets</a>
                                 <a href="tour.html" class="dropdown-item">Explorer la visite</a>
                                 <a href="gallery.html" class="dropdown-item">Notre Gallerie</a>

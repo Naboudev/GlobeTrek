@@ -19,23 +19,24 @@
       <h1 class="mb-0">Chambres Disponibles</h1>
     </div>
     <div class="row g-4">
-    <?php foreach ($chambres as $c): ?>
-    <div class="col-md-4">
-      <div class="card h-100 shadow-sm">
-        <img src="images/<?= htmlspecialchars($c->image) ?>" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Image de <?= htmlspecialchars($c->nom) ?>">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title"><?= htmlspecialchars($c->nom) ?></h5>
-          <p class="text-primary fw-bold"><?= number_format($c->prix, 0, ',', ' ') ?> FCFA <small>/jour</small></p>
-          <?php $dateDep = dateDepart($c->id); if ($c->disponible): ?>
-            <a href="?page=reservation&id=<?= $c->id ?>" class="btn btn-success mb-2">Réserver cette chambre</a>
-          <?php else: ?>
-            <a href="#" class="btn btn-danger mb-2">Occupée <br> jusqu'à <br> <?= $dateDep ? date("d/m/Y", strtotime($dateDep)) : 'date inconnue' ?></a>
-          <?php endif; ?>
-          <a href="?page=detailchambre&id=<?= $c->id ?>" class="btn btn-primary mt-auto">Voir plus →</a>
+      <?php foreach ($chambres as $c): ?>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="images/<?= htmlspecialchars($c->image) ?>" class="card-img-top img-fluid" style="height: 200px; object-fit: cover;" alt="Image de <?= htmlspecialchars($c->nom) ?>">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><?= htmlspecialchars($c->nom) ?></h5>
+            <p class="text-primary fw-bold"><?= number_format($c->prix, 0, ',', ' ') ?> FCFA <small>/jour</small></p>
+            <?php $dateDep = dateDepart($c->id); if ($c->disponible): ?>
+              <a href="?page=reservation&id=<?= $c->id ?>" class="btn btn-success mb-2">Réserver cette chambre</a>
+            <?php else: ?>
+              <a href="#" class="btn btn-danger mb-2">Occupée <br> jusqu'à <br> <?= $dateDep ? date("d/m/Y", strtotime($dateDep)) : 'date inconnue' ?></a>
+            <?php endif; ?>
+            <a href="?page=detailchambre&id=<?= $c->id ?>" class="btn btn-primary mt-auto">Voir plus →</a>
+          </div>
         </div>
       </div>
+      <?php endforeach; ?>
     </div>
-    <?php endforeach; ?>
   </div>
 </div>
 <!-- Chambre End -->
