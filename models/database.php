@@ -1,7 +1,7 @@
 <?php 
 
 try {
-$db = new PDO("mysql:host=localhost;dbname=c10_globetrek", "root", "");
+$db = new PDO("mysql:host=localhost;dbname=globe trek", "root", "");
     
 } catch (PDOException $e) {
     echo "Erreur: ".$e->getMessage()." a la ligne ".__LINE__;
@@ -628,7 +628,7 @@ function recupererToutesLesReservationsDestinations() {
                 u.email AS email
             FROM reservationspays rp
             JOIN destinations d ON rp.destination_id = d.id
-            JOIN users u ON rp.id_client = u.id
+            JOIN users u ON rp.client_id = u.id
             ORDER BY rp.date_heure DESC
         ");
         $q->execute();

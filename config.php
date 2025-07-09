@@ -15,7 +15,7 @@ Setup::setToken("UaCrlNE94CwmJoptV3bK");
 
 Store::setName("GlobeTrek");
 Store::setTagline("Site de réservations");
-Store::setPhoneNumber("782237222");
+Store::setPhoneNumber("755243969");
 Store::setWebsiteUrl("http://localhost/projets/cohorte10/GlobeTrek/");
 Store::setReturnUrl("http://localhost/projets/cohorte10/GlobeTrek/?page=retour_paiement");
 Store::setCancelUrl("http://localhost/projets/cohorte10/GlobeTrek/?page=echec_paiement"); 
