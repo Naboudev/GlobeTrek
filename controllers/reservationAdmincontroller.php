@@ -93,7 +93,7 @@ if (isset($_GET["type"]) && $_GET["type"] == "edit") {
     $r = recupererUneReservation($_GET["id"]);
     $chambres = recupererToutesLesChambres();
     $clients = recupererTousLesClients();
-    
+     
     require_once("views/reservationEdit.php");
 }else{
     require_once("views/reservationAdmin.php");

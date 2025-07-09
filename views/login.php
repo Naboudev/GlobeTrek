@@ -36,6 +36,7 @@
                 <button type="submit" name="connecter" class="btn btn-primary w-100">Se connecter</button>
                 <div class="text-center mt-3">
                   <p>Pas encore de compte? <a href="?page=inscription">Inscrivez-vous</a></p>
+                </div>
               </form>
             </div>
           </div>

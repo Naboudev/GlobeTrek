@@ -57,7 +57,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="prix" class="form-label">Prix de la chambre</label>
-                    <input type="text" class="form-control" id="prix" name="prix" value="<?= isset($chambre) ? htmlspecialchars($chambre->prix) : '' ?>">
+                    <input type="number" readonly class="form-control" id="prix" name="prix" value="<?= isset($chambre) ? htmlspecialchars($chambre->prix) : '' ?>">
                 </div>
                 <div class="mb-3">
                     <label for="paymentMethod" class="form-label">Méthode de paiement</label>

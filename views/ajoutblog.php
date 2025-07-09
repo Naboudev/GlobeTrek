@@ -21,7 +21,7 @@
                 <label for="image" class="form-label">Image</label>
                 <input type="file" class="form-control" id="image" name="image" accept=".jpg,.jpeg,.png,.gif">
             </div>
-            <?php if ($_GET["type"] == "edit"): ?>
+            <?php if ($_GET["type"] == "add"): ?>
             <div class="mb-3 form-group">
                 <button type="submit" name="ajouter" class="btn btn-primary">Ajouter un blog</button>
             </div> 

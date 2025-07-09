@@ -42,11 +42,12 @@
                         ?>
                             <div class="col-md-6 col-lg-4">
                                 <div class="card border-0 shadow-sm h-100">
-                                    <img src="images/<?= htmlspecialchars($d->image) ?>" class="card-img-top img-fluid rounded-top" alt="<?= htmlspecialchars($d->nom) ?>">
+                                    <img src="images/<?= htmlspecialchars($d->image) ?>" class="card-img-top img-fluid rounded-top" style="height:300px" alt="<?= htmlspecialchars($d->nom) ?>">
                                     <div class="card-body d-flex flex-column text-start">
                                         <h5 class="card-title text-uppercase"><?= htmlspecialchars($d->nom) ?></h5>
-                                        <a href="?page=reservation&id=<?= $d->id ?>" class="btn btn-outline-primary mt-auto">
-                                            Réserver <i class="fa fa-arrow-right ms-2"></i>
+                                        <p class="card-text fw-bold">Prix: <?= htmlspecialchars($d->prix) ?> FCFA</p>
+                                        <a href="?page=detailpaysdestination&id=<?= $d->id ?>" class="btn btn-outline-primary mt-auto">
+                                            Voir Plus <i class="fa fa-arrow-right ms-2"></i>
                                         </a>
                                     </div>
                                 </div>

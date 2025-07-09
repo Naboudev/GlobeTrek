@@ -33,11 +33,19 @@ if (isset($_GET["iddestinations"])) {
 
 if (isset($_POST["modifier"])) {
     extract($_POST);
-    if (modifierUneDestination($_GET["id"], $img_name, $nom, $description, $prix, $pays_id,)) {
-        setmessage("Modification de destinations avec succes");   
+    $d = recupererUneDestination($_GET["id"]);
+    if ($_FILES["image"]["size"] > 0) {
+        $img_name = uniqid(). ".jpg";
+         $img = $_FILES["image"]["tmp_name"];
+            move_uploaded_file($img, "images/".$img_name);  
+    }else{
+        $img_name = $d->image;
+    }
+    if (modifierUneDestination($_GET["id"], $nom, $description, $prix, $pays_id, $img_name)) {
+        setmessage("Modification de destination avec succes");   
         return header("Location:?page=destination");
-     }else{
-        setmessage("Erreur de modification de destinations", "danger"); 
+    }else{
+        setmessage("Erreur de modification de destination", "danger"); 
     }
 }
 

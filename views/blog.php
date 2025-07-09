@@ -14,11 +14,9 @@
 <!-- Blog Start -->
 <div class="container-fluid blog py-5">
     <div class="container py-5">
-        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+        <div class="mx-auto text-center mb-5">
             <h5 class="section-title px-3">Notre Blog</h5>
             <h1 class="mb-4">Blogs de GlobeTrek populaires</h1>
-            <p class="mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti deserunt tenetur sapiente atque. Magni non explicabo beatae sit, vel reiciendis consectetur numquam id similique sunt error obcaecati ducimus officia maiores.
-            </p>
         </div>
         <div class="row g-4 justify-content-center">
             <?php foreach ($blogs as $b): ?>
@@ -26,7 +24,7 @@
                 <div class="blog-item">
                     <div class="blog-img">
                         <div class="blog-img-inner">
-                            <img src="images/<?= $b->image ?>" style="height: 250px; object-fit: cover;" alt="" class="img-fluid">
+                            <img src="images/<?= $b->image ?>" style="height: 250px; object-fit: cover;" width="100%" alt="" class="img-fluid">
                             <div class="blog-icon">
                                 <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
                             </div>
@@ -39,9 +37,8 @@
                     </div>
                     <div class="blog-content border border-top-0 rounded-bottom p-4">
                         <p class="mb-3"><?= $b->auteur ?></p>
-                        <a href="#" class="h4"><?= $b->titre ?></a>
-                        <p class="my-3"><?= $b->description ?></p>
-                        <a href="?page=blogDetail&id=<?= $b->id ?>" class="btn btn-primary rounded-pill py-2 px-4">Voir Plus →</a>
+                        <a href="#" class="h5"><?= $b->titre ?></a> <br><br>
+                        <a href="?page=blogDetail&id=<?= $b->id ?>" class="btn btn-primary rounded-pill py-2 px-5">Voir Plus →</a>
                     </div>
                 </div>
             </div>
@@ -52,12 +49,12 @@
 <!-- Blog End -->
 
 <!-- Subscribe Start -->
-<div class="container-fluid subscribe py-5" style="margin-top: 200px;">
+<div class="container-fluid subscribe py-5" >
     <div class="container text-center py-5">
-        <div class="mx-auto text-center" style="max-width: 900px;">
+        <div class="mx-auto text-center">
             <h5 class="subscribe-title px-3">S'inscrire</h5>
             <h1 class="text-white mb-4">Notre infolettre</h1>
-            <p class="text-white mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
+            <p class="text-white mb-5">Découvrez nos nouvelles offres de voyage et réservez facilement votre prochaine destination en ligne, en toute sécurité. Profitez de <span class="text-warning"> -10% avec le code **GLOBETREK10**</span> sur votre première réservation. Inspirez-vous de nos idées d’évasion et explorez le monde avec GlobeTrek !
             </p>
             <div class="position-relative mx-auto">
                 <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre email">

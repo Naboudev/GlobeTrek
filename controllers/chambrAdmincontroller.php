@@ -33,6 +33,14 @@ if (isset($_GET["idchambres"])) {
 
 if (isset($_POST["modifier"])) {
     extract($_POST);
+    $c = recupererUneChambre($_GET["id"]);
+    if ($_FILES["image"]["size"] > 0) {
+        $img_name = uniqid(). ".jpg";
+         $img = $_FILES["image"]["tmp_name"];
+            move_uploaded_file($img, "images/".$img_name);  
+    }else{
+        $img_name = $d->image;
+    }
     $disponible = isset($disponible) ? "oui" : "non"; // Si le champ 'disponible' est coché, on le considère comme disponible
 
     if (modifierUneChambre($_GET["id"], $nom, $type, $description, $capacite, $prix, $img_name, $disponible)) {
