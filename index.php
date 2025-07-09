@@ -52,8 +52,11 @@ if (isset($_GET["page"])) {
         require_once("controllers/employeAdmincontroller.php");
     }elseif ($_GET["page"] == "reservationpays") {
         require_once("controllers/reservationpayscontroller.php");
+<<<<<<< HEAD
     }elseif ($_GET["page"] == "retour_paiement") {
         require_once("controllers/retourController.php");
+=======
+>>>>>>> ee6a1aac04563a7760c88c45a50763d030d9419d
     }else{
         require_once("controllers/homecontroller.php");     
     }

@@ -22,6 +22,7 @@ if (isset($_POST["reserver"])) {
     $client_id = $_SESSION["user"]->id;
     $date_reservation = date("Y-m-d H:i:s");
     $demandes_speciales = htmlspecialchars($specialRequests ?? '');
+    $prix = isset($price) ? (float)$price : 0.0; // Assurez-vous que le prix est un float
     $methode_paiement = htmlspecialchars($paymentMethod ?? '');
     $nombre_personnes = isset($guests) ? (int)$guests : 1;
     $actions = 1; // Par défaut, l'action est "en attente"
