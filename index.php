@@ -20,10 +20,16 @@ if (isset($_GET["page"])) {
         require_once("controllers/destinationcontroller.php");
     }elseif ($_GET["page"] == "contact") {
         require_once("controllers/contactcontroller.php");
+    }elseif ($_GET["page"] == "detailpaysdestination") {
+        require_once("controllers/detailpaysdestinationcontroller.php");
     }elseif ($_GET["page"] == "pays/destination") {
         require_once("controllers/paysdestinationcontroller.php");
     }elseif ($_GET["page"] == "paquets") {
         require_once("controllers/paquetscontroller.php");
+    }elseif ($_GET["page"] == "gallarie") {
+        require_once("controllers/gallariecontroller.php");
+    }elseif ($_GET["page"] == "guide") {
+        require_once("controllers/guidecontroller.php");
     }elseif ($_GET["page"] == "blog") {
         require_once("controllers/blogcontroller.php");
     }elseif ($_GET["page"] == "blogAdmin") {
@@ -44,8 +50,10 @@ if (isset($_GET["page"])) {
         require_once("controllers/reservationpaysAdmincontroller.php");
     }elseif ($_GET["page"] == "employeAdmin") {
         require_once("controllers/employeAdmincontroller.php");
-    }elseif ($_GET["page"] == "ajoutreservationpays") {
-        require_once("controllers/ajoutreservationpayscontroller.php");
+    }elseif ($_GET["page"] == "reservationpays") {
+        require_once("controllers/reservationpayscontroller.php");
+    }elseif ($_GET["page"] == "retour_paiement") {
+        require_once("controllers/retourController.php");
     }else{
         require_once("controllers/homecontroller.php");     
     }

@@ -50,7 +50,7 @@ function recupererLesDonneesDeLInput($nom) {
 
 function dateDepart($id) {
     // Connexion à la base de données (à adapter selon ton projet)
-    $pdo = new PDO("mysql:host=localhost;dbname=globe trek", "root", "");
+    $pdo = new PDO("mysql:host=localhost;dbname=c10_globetrek", "root", "");
 
     // Préparation de la requête : on récupère la réservation en cours (date de départ la plus proche et future)
     $stmt = $pdo->prepare("SELECT date_depart 

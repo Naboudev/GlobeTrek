@@ -80,8 +80,8 @@
                                 <a href="?page=blog" class="dropdown-item">Blogs</a>
                                 <a href="?page=paquets" class="dropdown-item">Paquets</a>
                                 <a href="tour.html" class="dropdown-item">Explorer la visite</a>
-                                <a href="gallery.html" class="dropdown-item">Notre Gallerie</a>
-                                <a href="guides.html" class="dropdown-item">Guides de voyage</a>
+                                <a href="?page=gallarie" class="dropdown-item">Notre Gallerie</a>
+                                <a href="?page=guide" class="dropdown-item">Guides de voyage</a>
                             </div>
                         </div>
                         <?php endif; ?>

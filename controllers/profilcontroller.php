@@ -47,5 +47,6 @@ if (isset($_SESSION["user"])) {
     exit();
 } 
 $reservations = mesReservations($_SESSION["user"]->id);
+
 require_once("views/includes/entete.php");
 require_once("views/profil.php");

@@ -1,5 +1,6 @@
 <?php
-
+require 'config.php';
+use Paydunya\Checkout\CheckoutInvoice;
 
 if (!isset($_SESSION["user"])) {
     setmessage("Vous devez vous connecter pour accéder à cette page", "danger");
@@ -23,7 +24,7 @@ if (isset($_POST["reserver"])) {
     $demandes_speciales = htmlspecialchars($specialRequests ?? '');
     $methode_paiement = htmlspecialchars($paymentMethod ?? '');
     $nombre_personnes = isset($guests) ? (int)$guests : 1;
-    $actions = 0; // Par défaut, l'action est "en attente"
+    $actions = 1; // Par défaut, l'action est "en attente"
     $chambre_id = isset($chambre_id) ? (int)$chambre_id : (int) $_GET["id"];
     
 
@@ -47,38 +48,36 @@ if (isset($_POST["reserver"])) {
          else {
             $prix = $nombre_nuits * $c->prix;
             $reference = "#ref" . time(); // Exemple : #ref1718636881
+            $invoice = new CheckoutInvoice();
+            $invoice->addItem($c->nom, 1, $prix, $prix);    
+            $invoice->setTotalAmount($prix);
+            // die($prix);
+            if ($invoice->create()) {
+                $_SESSION["reservations"] = [
+                    "reference" => $reference,
+                    "date_arrivee" => $date_arrivee->format("Y-m-d"),
+                    "date_depart" => $date_depart->format("Y-m-d"),
+                    "nombre_nuits" => $nombre_nuits,
+                    "nombre_personnes" => $nombre_personnes,
+                    "demandes_speciales" => $demandes_speciales,
+                    "methode_paiement" => $methode_paiement,
+                    "date_reservation" => $date_reservation,
+                    "chambre_id" => $chambre_id,
+                    "client_id" => $client_id,
+                    "prix" => $prix,
+                    "actions" => $actions
+                ];
+                $_SESSION["adresse"] = $adresse;
+                return header("Location:".$invoice->getInvoiceUrl());
+            }else{
+                die("Erreur:".$invoice->response_text);
+            }
 
-
-            // Appel de la fonction ajouterReservation avec ordre correct
-            $resultat = ajouterReservation(
-                $reference,
-                $date_arrivee->format("Y-m-d"),
-                $date_depart->format("Y-m-d"),
-                $nombre_nuits,
-                $nombre_personnes,
-                $demandes_speciales,
-                $methode_paiement,
-                $date_reservation,
-                $chambre_id,
-                $client_id,
-                $prix,
-                $actions
-
-            );
-
-            if ($resultat) {
-                setmessage("Réservation effectuée avec succès", "success");
-                header("Location: ?page=reservation");
-                exit();
-            } 
         }
     }
 
     enregistrerLesDonneesDeLInput();
 }
-
-
-
 
 
 $chambres = recupererToutesLesChambres();

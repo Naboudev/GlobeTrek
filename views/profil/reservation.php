@@ -20,7 +20,7 @@
                 <?php foreach ($reservations as $r): ?>
                 <tr>
                     <td><?= htmlspecialchars($r->reference) ?></td>
-                    <td><?= htmlspecialchars($r->chambre_id) ?></td>
+                    <td><?= substr(htmlspecialchars($r->chambre_nom), 0, 20) ?>...</td>
                     <td><?= date("d/m/Y", strtotime($r->date_arrivee)) ?></td>
                     <td><?= date("d/m/Y", strtotime($r->date_depart)) ?></td>
                     <td><?= htmlspecialchars($r->nombre_nuits) ?></td>

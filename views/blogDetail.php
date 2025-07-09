@@ -22,7 +22,7 @@
                 <div class="row g-0">
                     <img src="images/<?= htmlspecialchars($b->image) ?>" class="card-img-top" style="height: 300px;width:50%  object-fit: cover;" alt="Image du blog">
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card-body">
                         <h1 class="card-title"><?= htmlspecialchars($b->titre) ?></h1>
                         <p class="text-muted">
@@ -41,12 +41,12 @@
 
 
 <!-- Subscribe Start -->
-<div class="container-fluid subscribe py-5" style="margin-top: 200px;">
+<div class="container-fluid subscribe py-5">
     <div class="container text-center py-5">
         <div class="mx-auto text-center" style="max-width: 900px;">
             <h5 class="subscribe-title px-3">S'inscrire</h5>
             <h1 class="text-white mb-4">Notre infolettre</h1>
-            <p class="text-white mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
+            <p class="text-white mb-5">Découvrez nos nouvelles offres de voyage et réservez facilement votre prochaine destination en ligne, en toute sécurité. Profitez de <span class="text-warning"> -10% avec le code **GLOBETREK10**</span> sur votre première réservation. Inspirez-vous de nos idées d’évasion et explorez le monde avec GlobeTrek !
             </p>
             <div class="position-relative mx-auto">
                 <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre email">

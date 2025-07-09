@@ -7,7 +7,7 @@
     </div>
     <div class="card-body">
         <?php require_once "views/includes/getmessage.php"; ?>
-        <form method="post" action="" enctype="multipart/form-data">
+        <form method="POST" action="" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="nom" class="form-label">Nom</label>
                 <input type="text" value="<?= isset($d) ? $d->nom : '' ?>" class="form-control" id="nom" name="nom" required>
@@ -31,7 +31,17 @@
             </div>
             <div class="mb-3">
                 <label for="image" class="form-label">Image</label>
-                <input type="file" value="<?= isset($d) ? $d->image : '' ?>" accept=".jpg, .jpeg, .png, .gif, .webp" class="form-control" id="image" name="image" required>
+                <input type="file" 
+                    accept=".jpg, .jpeg, .png, .gif, .webp" 
+                    class="form-control" 
+                    id="image" 
+                    name="image"
+                    <?= $_GET["type"] == "add" ? "required" : "" ?>>
+                <?php if (isset($d) && !empty($d->image)): ?>
+                    <div class="mt-2">
+                        <img src="images/<?= htmlspecialchars($d->image) ?>" alt="Image actuelle" width="150">
+                    </div>
+                <?php endif; ?>
             </div>
             <?php if ($_GET["type"] == "add"): ?>
             <div class="mb-3">

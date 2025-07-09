@@ -63,12 +63,6 @@
           <p>Lundi - Vendredi : 9h00 - 18h00</p>
           <p>Samedi : 10h00 - 14h00</p>
 
-          <hr class="my-4">
-
-          <h5>Notre agence sur la carte</h5>
-          <div class="ratio ratio-16x9">
-            <iframe src="https://maps.google.com/maps?q=Paris&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
-          </div>
         </div>
       </div>
     </div>
@@ -76,11 +70,9 @@
   <!-- Subscribe Start -->
         <div class="container-fluid subscribe py-5">
             <div class="container text-center py-5">
-                <div class="mx-auto text-center" style="max-width: 900px;">
+                <div class="mx-auto text-center">
                     <h5 class="subscribe-title px-3">S'inscrire</h5>
                     <h1 class="text-white mb-4">Notre infolettre</h1>
-                    <p class="text-white mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum tempore nam, architecto doloremque velit explicabo? Voluptate sunt eveniet fuga eligendi! Expedita laudantium fugiat corrupti eum cum repellat a laborum quasi.
-                    </p>
                     <div class="position-relative mx-auto">
                         <input class="form-control border-primary rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre email">
                         <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">S'inscrire</button>

@@ -6,52 +6,48 @@
         </div>
     </div> 
     <div class="table-responsive">
-        <table class="table table-bordered table-striped table-hover align-middle text-center">
-            <thead>
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-primary text-center">
                 <tr>
                     <th>#</th>
-                    <th>Nom</th>
                     <th>Email</th>
-                    <th>Date et Heure</th>
+                    <th>Date & Heure</th>
                     <th>Destination</th>
-                    <th>Pays de Départ</th>
+                    <th>Pays de départ</th>
                     <th>Personnes</th>
                     <th>Enfants</th>
-                    <th>Demande Spéciale</th>
-                    <th>Statuts</th>
+                    <th>Demandes spéciales</th>
+                    <th>Prix</th>
+                    <th>Méthode paiement</th>
+                    <th>Statut</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Seynabou Sarr</td>
-                    <td>seyna@example.com</td>
-                    <td>25/06/2025 10:00</td>
-                    <td>Maroc</td>
-                    <td>Sénégal</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>Chambre avec vue sur mer</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Ali Diop</td>
-                    <td>ali.d@example.com</td>
-                    <td>26/06/2025 14:30</td>
-                    <td>France</td>
-                    <td>Mali</td>
-                    <td>3</td>
-                    <td>0</td>
-                    <td>Transport inclus</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <!-- Ajoutez plus de lignes ici dynamiquement avec PHP/MySQL -->
+                <?php foreach ($reservationspays as $i => $r): ?>
+                    <tr>
+                        <td class="text-center"><?= $i + 1 ?></td>
+                        <td><?= htmlspecialchars($r->email) ?></td>
+                        <td><?= htmlspecialchars($r->date_heure) ?></td>
+                        <td><?= htmlspecialchars($r->destination) ?></td>
+                        <td><?= htmlspecialchars($r->pays_depart) ?></td>
+                        <td class="text-center"><?= (int)$r->personnes ?></td>
+                        <td class="text-center"><?= (int)$r->enfants ?></td>
+                        <td><?= nl2br(htmlspecialchars($r->demandes_speciales)) ?></td>
+                        <td class="text-end"><?= number_format($r->prix, 0, ',', ' ') ?> FCFA</td>
+                        <td><?= htmlspecialchars($r->methode_paiement) ?></td>
+                        <td class="text-center">
+                            <?= htmlspecialchars($r->statuts) ?>
+                        </td>
+                        <td class="text-center">
+                            <a href="?page=detailReservation&id=<?= $r->id ?>" class="btn btn-sm btn-info">Voir</a>
+                            <a href="?page=supprimerReservation&id=<?= $r->id ?>" class="btn btn-sm btn-danger" onclick="return confirm('Supprimer cette réservation ?')">Supprimer</a>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
 </div>
+
 <!-- Table Réservations End -->
