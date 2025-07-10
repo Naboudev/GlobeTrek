@@ -2,16 +2,16 @@
     <div class="container row accordion" id="profilAccordion" style="margin-top: 120px;">
         <p class="container d-flex flex-column col-md-3">
             <a class="btn btn-primary" href="?page=profil&type=info" >
-                Mes Informations
+            Mes Informations
             </a>
             <a class="btn btn-primary mt-3" href="?page=profil&type=mesreservations" >
-              Mes Réservations
+            Mes Réservations
             </a>
             <a class="btn btn-primary mt-3" href="?page=profil&type=password" >
-                Mot de passe
+            Mot de passe
             </a>
             <a class="btn btn-outline-danger mt-3" href="?page=deconnexion" role="button">
-                Deconnexion
+            Deconnexion
             </a>     
         </p>
         <div class="col-md-9">

@@ -396,7 +396,7 @@ function ajouterReservation($reference, $date_arrivee, $date_depart, $nombre_nui
 }
 
 
-function mesReservations($client_id){
+function mesReservationsChambres($client_id){
     global $db;
     try {
         $q = $db->prepare("
@@ -555,26 +555,56 @@ function modifierUneReservation($id, $date_arrivee, $date_depart, $nombre_nuits,
 }
 
 
-function ajouterReservationDestination($date_heure, $id_destination, $pays_depart, $personnes, $enfants, $demandes_speciales, $methode_paiement, $statuts, $id_client){
+function ajouterReservationDestination($date_heure, $destination_id, $pays_depart, $personnes, $enfants, $demandes_speciales, $methode_paiement, $statuts = 1, $client_id){
     global $db;
     try {
-        $q = $db->prepare("INSERT INTO reservationpays VALUES(null, :date_heure, :id_destination, :pays_depart, :personnes, :enfants, :demandes_speciales, :methode_paiement, :statuts, :id_client)");
+        $q = $db->prepare("INSERT INTO reservationpays VALUES(null, :date_heure, :destination_id, :pays_depart, :personnes, :enfants, :demandes_speciales, :methode_paiement, :statuts, :client_id)");
         return $q->execute([
             "date_heure" => $date_heure,
-            "id_destination" => $id_destination,
+            "destination_id" => $destination_id,
             "pays_depart" => $pays_depart,
             "personnes" => $personnes,
             "enfants" => $enfants,
             "demandes_speciales" => $demandes_speciales,
             "methode_paiement" => $methode_paiement,
             "statuts" => $statuts,
-            "id_client" => $id_client
+            "client_id" => $client_id
         ]);
     } catch (PDOException $e) {
         setmessage("Erreur: " . $e->getMessage() . " à la ligne " . __LINE__, "danger");
         return false;
     }
 }
+
+
+function mesReservationsDestinations($client_id){
+    global $db;
+    try {
+        $q = $db->prepare("
+            SELECT 
+                rp.*, 
+                d.nom AS destination_nom,
+                rp.pays_depart,
+                u.nom AS client_nom, 
+                u.prenom AS client_prenom
+            FROM reservationspays rp
+            JOIN destinations d ON rp.destination_id = d.id
+            JOIN users u ON rp.client_id = u.id
+            WHERE rp.client_id = :client_id
+            ORDER BY rp.date_heure DESC
+        ");
+
+        $q->execute([
+            "client_id" => $client_id,
+        ]);
+
+        return $q->fetchAll(PDO::FETCH_OBJ);
+    } catch (PDOException $e) {
+        setmessage("Erreur: " . $e->getMessage() . " à la ligne " . __LINE__, "danger");
+        return [];
+    }
+}
+
 
 
 function changerStatutReservationDestination($id, $statut){
@@ -592,13 +622,13 @@ function changerStatutReservationDestination($id, $statut){
 }
 
 
-function changerStatutDestination($id_destination, $statut){
+function changerStatutDestination($destination_id, $statut){
     global $db;
     try {
-        $q = $db->prepare("UPDATE destinations SET actions=:statut WHERE id=:id_destination");
+        $q = $db->prepare("UPDATE destinations SET actions=:statut WHERE id=:destination_id");
         return $q->execute([
             "statut" => $statut,
-            "id_destination" => $id_destination
+            "destination_id" => $destination_id
         ]);
     } catch (PDOException $e) {
         setmessage("Erreur: " . $e->getMessage() . " à la ligne " . __LINE__, "danger");

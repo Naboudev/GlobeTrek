@@ -4,7 +4,7 @@ if (isset($_GET['type'])) {
     $r = recupererUneReservationDestination($_GET["id"]);
     if ($_GET['type'] == "comfirmer") {
         if (changerStatutReservationDestination($r->id, 1)) {
-            changerStatutDestination($r->$destination, 1);
+            changerStatutDestination($r->destination, 1);
             $message = "La réservation a été confirmée avec succès.";
             header("Location: ?page=reservationdestinationAdmin");
             exit();
@@ -14,7 +14,7 @@ if (isset($_GET['type'])) {
 
     } elseif ($_GET['type'] == "annuler") {
         if (changerStatutReservationDestination($r->id, 2)) {
-            changerStatutDestination($r->$destination, 0);
+            changerStatutDestination($r->destination, 0);
             $message = "La réservation a été annulée avec succès.";
             header("Location: ?page=reservationdestinationAdmin");
             exit();
@@ -35,8 +35,8 @@ if (isset($_POST["modifier"])) {
     $client_id = $_SESSION["user"]->id;
     $destination_id = isset($destination) ? (int)$destination : 0;
     $pays_depart = htmlspecialchars($pays_depart ?? '');
-    $nombre_personnes = isset($personnes) ? (int)$personnes : 1;
-    $nombre_enfants = isset($enfants) ? (int)$enfants : 0;
+    $personnes = isset($personnes) ? (int)$personnes : 1;
+    $enfants = isset($enfants) ? (int)$enfants : 0;
 
     // Validation des données
     if ($date_heure < $aujourdhui) {
@@ -45,7 +45,7 @@ if (isset($_POST["modifier"])) {
         setmessage("Destination invalide", "danger");
     } else {
         // Enregistrement de la réservation
-        if (ajouterReservationDestination($_GET["id"], $date_heure, $id_destination, $pays_depart, $personnes, $enfants, $demandes_speciales, $methode_paiement, $statuts, $id_client)) {
+        if (ajouterReservationDestination($_GET["id"], $date_heure, $destination_id, $pays_depart, $personnes, $enfants, $demandes_speciales, $methode_paiement, $statuts, $client_id)) {
             setmessage("Réservation ajoutée avec succès", "success");
             header("Location: ?page=reservationdestinationAdmin");
             exit();
@@ -61,6 +61,7 @@ if (isset($_GET["type"]) && $_GET["type"] == "edit") {
     $destinations = recupererToutesLesDestinations();
     $pays = recupererTousLesPays();
 
+    require_once("views/reservationpaysAdminEdit.php");
 }else{
     require_once("views/reservationpaysAdmin.php");
 }

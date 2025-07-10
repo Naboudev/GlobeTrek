@@ -10,6 +10,7 @@
             <thead class="table-primary text-center">
                 <tr>
                     <th>#</th>
+                    <th>Nom complet</th>
                     <th>Email</th>
                     <th>Date & Heure</th>
                     <th>Destination</th>
@@ -27,6 +28,7 @@
                 <?php foreach ($reservationspays as $i => $r): ?>
                     <tr>
                         <td class="text-center"><?= $i + 1 ?></td>
+                        <td><?= htmlspecialchars($r->nom) ?></td>
                         <td><?= htmlspecialchars($r->email) ?></td>
                         <td><?= htmlspecialchars($r->date_heure) ?></td>
                         <td><?= htmlspecialchars($r->destination) ?></td>
@@ -36,12 +38,21 @@
                         <td><?= nl2br(htmlspecialchars($r->demandes_speciales)) ?></td>
                         <td class="text-end"><?= number_format($r->prix, 0, ',', ' ') ?> FCFA</td>
                         <td><?= htmlspecialchars($r->methode_paiement) ?></td>
-                        <td class="text-center">
-                            <?= htmlspecialchars($r->statuts) ?>
+                        <td>
+                        <?php if($r->actions == 0): ?>
+                            <span class="badge bg-primary">En attente</span>
+                        <?php elseif($r->actions == 1): ?>
+                            <span class="badge bg-success">Confirmée</span>
+                        <?php elseif($r->actions == 2): ?>
+                            <span class="badge bg-danger">Annulée</span>
+                        <?php endif; ?>
                         </td>
-                        <td class="text-center">
-                            <a href="?page=detailReservation&id=<?= $r->id ?>" class="btn btn-sm btn-info">Voir</a>
-                            <a href="?page=supprimerReservation&id=<?= $r->id ?>" class="btn btn-sm btn-danger" onclick="return confirm('Supprimer cette réservation ?')">Supprimer</a>
+                        <td>
+                        <?php if ($r->actions == 0): ?>
+                            <a href="?page=reservationpaysAdmin&type=confirmer&id=<?= $r->id ?>" class="btn btn-success btn-sm" title="Confirmer"><i class="fa fa-check"></i></a>
+                            <a href="?page=reservationpaysAdmin&type=annuler&id=<?= $r->id ?>" class="btn btn-danger btn-sm" title="Annuler"><i class="fa fa-times"></i></a>
+                        <?php endif; ?>
+                            <a href="?page=reservationpaysAdmin&type=edit&id=<?= $r->id ?>" title="Editer" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

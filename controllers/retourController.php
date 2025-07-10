@@ -22,6 +22,5 @@ if (isset($_SESSION["reservations"])) {
             unset($_SESSION["reservations"]);
 }
 
-
-require_once("views/retour.php");
 require_once("views/includes/entete.php");
+require_once("views/retour.php");

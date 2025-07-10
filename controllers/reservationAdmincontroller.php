@@ -59,24 +59,13 @@ if (isset($_POST["modifier"])) {
 
 
             // Appel de la fonction ajouterReservation avec ordre correct
-            $resultat = modifierUneReservation($_GET["id"],
-                $date_arrivee->format("Y-m-d"),
-                $date_depart->format("Y-m-d"),
-                $nombre_nuits,
-                $nombre_personnes,
-                $methode_paiement,
-                $chambre_id,
-                $client_id,
-                $prix,
-                $actions
-
-            );
-
-            if ($resultat) {
-                setmessage("Mis a jour réservation effectuée avec succès", "success");
+            if (ajouterReservation($reference, $date_arrivee, $date_depart, $nombre_nuits, $nombre_personnes, $demandes_speciales, $methode_paiement, $date_reservation, $chambre_id, $client_id, $prix, $actions = 1)) {
+                setmessage("Réservation ajoutée avec succès", "success");
                 header("Location: ?page=reservationAdmin");
                 exit();
-            } 
+            } else {
+                setmessage("Erreur lors de l'ajout de la réservation", "danger");
+            }
         }
     }
 
@@ -87,7 +76,7 @@ $reservations = recupererToutesLesReservations();
 
 // print_r($reservations);
 // die();
-
+ 
 
 if (isset($_GET["type"]) && $_GET["type"] == "edit") {
     $r = recupererUneReservation($_GET["id"]);

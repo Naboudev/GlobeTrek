@@ -10,8 +10,7 @@
             <thead>
                 <tr>
                     <th>Chambre</th>
-                    <th>Prénom</th>
-                    <th>Nom</th>
+                    <th>Nom Complet</th>
                     <th>Adresse e-mail</th>
                     <th>Date d'arrivée</th>
                     <th>Date de départ</th>
@@ -28,7 +27,6 @@
             <?php foreach ($reservations as $r): ?>
                 <tr>
                     <td><?= htmlspecialchars($r->chambre_id) ?></td>
-                    <td><?= htmlspecialchars($r->client_prenom) ?></td>
                     <td><?= htmlspecialchars($r->client_nom) ?></td>
                     <td><?= htmlspecialchars($r->email) ?></td>
                     <td><?= date("d/m/Y", strtotime($r->date_arrivee)) ?></td>
@@ -45,7 +43,7 @@
                             <span class="badge bg-success">Confirmée</span>
                         <?php elseif($r->actions == 2): ?>
                             <span class="badge bg-danger">Annulée</span>
-                        <?php endif; ?>
+                        <?php endif; ?> 
                     </td>
                     <td>
                         <?php if ($r->actions == 0): ?>

@@ -46,7 +46,8 @@ if (isset($_SESSION["user"])) {
  return header("location:?page=home");
     exit();
 } 
-$reservations = mesReservations($_SESSION["user"]->id);
+$reservations = mesReservationsChambres($_SESSION["user"]->id);
+$reservationspays = mesReservationsDestinations($_SESSION["user"]->id);
 
 require_once("views/includes/entete.php");
 require_once("views/profil.php");

@@ -52,8 +52,8 @@
         <table class="table table-bordered table-striped table-hover align-middle text-center">
             <thead> 
                 <tr>
-                    <th>#</th>
-                    <th>Nom</th>
+                    <th>#</th> 
+                    <th>Nom Complet</th>
                     <th>Email</th>
                     <th>Date et Heure</th>
                     <th>Destination</th>
@@ -65,30 +65,23 @@
                 </tr>
             </thead>
             <tbody>
+                <?php foreach($reservationspays as $r) : ?>
                 <tr>
                     <td>1</td>
-                    <td>Seynabou Sarr</td>
-                    <td>seyna@example.com</td>
-                    <td>25/06/2025 10:00</td>
-                    <td>Maroc</td>
-                    <td>Sénégal</td>
-                    <td>2</td>
-                    <td>1</td>
-                    <td>Chambre avec vue sur mer</td>
-                    <td></td>
+                    <td><?= htmlspecialchars($_SESSION['user']->nom) ?></td>
+                    <td><?= htmlspecialchars($_SESSION['user']->email) ?></td>
+                    <td><?= date("d/m/Y H:i", strtotime($r->date_heure)) ?></td>
+                    <td><?= htmlspecialchars($r->destination) ?></td>
+                    <td><?= htmlspecialchars($r->pays_depart) ?></td>
+                    <td class="text-center"><?= (int)$r->personnes ?></td>
+                    <td class="text-center"><?= (int)$r->enfants ?></td>
+                    <td><?= nl2br(htmlspecialchars($r->demandes_speciales)) ?></td>
+                    <td>
+                        <a href="?page=detailReservation&id=<?= $r->id ?>" class="btn btn-sm btn-info">Voir</a>
+                        <a href="?page=supprimerReservation&id=<?= $r->id ?>" class="btn btn-sm btn-danger" onclick="return confirm('Supprimer cette réservation ?')">Supprimer</a>
+                    </td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Ali Diop</td>
-                    <td>ali.d@example.com</td>
-                    <td>26/06/2025 14:30</td>
-                    <td>France</td>
-                    <td>Mali</td>
-                    <td>3</td>
-                    <td>0</td>
-                    <td>Transport inclus</td>
-                    <td></td>
-                </tr>
+                    <?php endforeach; ?>
                 <!-- Ajoutez plus de lignes ici dynamiquement avec PHP/MySQL -->
             </tbody>
         </table>
